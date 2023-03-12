@@ -14,7 +14,7 @@ function Footer({ check,check1 }) {
                   alt="FlowBite Logo"
                 />
                 <p className="my-5 md:w-96">
-                  Goupsc.com is a one-stop solution for all central and state
+                  one-stop solution for all central and state
                   competitive exam aspirants' current affairs needs. Our main
                   goal is to simplify concepts and present them in a clear and
                   understandable manner. The platform is a collaborative effort
@@ -83,7 +83,7 @@ function Footer({ check,check1 }) {
               <span className="text-sm text-gray-500 sm:text-center ">
                 © 2023{" "}
                 <a href="/" className="hover:underline">
-                  GOUPSC™
+                  kannadapatashale™
                 </a>
                 . All Rights Reserved.
               </span>
