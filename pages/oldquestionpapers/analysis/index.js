@@ -4,7 +4,7 @@ import React from "react";
 import Typewriter from "typewriter-effect";
 import { gql } from "@apollo/client";
 import client from "middleware/apollo-client";
-function Analysis({ data }) {
+function Analysis({ a }) {
   return (
     <div>
       <div className=" text-white text-lg md:text-2xl px-10 text-center py-10 md:py-20 bg-orange-300">
@@ -79,8 +79,8 @@ function Analysis({ data }) {
         <div>
           <p className="text-center my-5 font-bold">RECENTS</p>
           <div>
-            {data.oldqpas.data &&
-              data.oldqpas.data.map((item) => (
+            {a.oldqpas.data &&
+              a.oldqpas.data.map((item) => (
                 <Videocard
                   key={item.id}
                   title={item.attributes.title}
@@ -113,6 +113,6 @@ export async function getServerSideProps() {
       }
     `,
   });
-
-  return { props: { data } };
+const a = data;
+  return { props: { a } };
 }
