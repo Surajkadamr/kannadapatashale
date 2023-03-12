@@ -4,7 +4,7 @@ import React from "react";
 import Typewriter from "typewriter-effect";
 import { gql } from "@apollo/client";
 import client from "middleware/apollo-client";
-function Videos({ data }) {
+function Videos({ a }) {
   return (
     <div>
       <div className=" text-white text-lg md:text-2xl px-10 text-center py-10 md:py-20 bg-orange-300">
@@ -105,8 +105,8 @@ function Videos({ data }) {
         </div>
         <div>
           <p className="text-center my-5 font-bold">RECENTS</p>
-            {data.videos.data &&
-              data.videos.data.map((item) => (
+            {a.videos.data &&
+              a.videos.data.map((item) => (
                 <Videocard
                   key={item.id}
                   title={item.attributes.title}
@@ -138,6 +138,6 @@ export async function getServerSideProps() {
       }
     `,
   });
-
-  return { props: { data } };
+const a=data;
+  return { props: { a } };
 }
