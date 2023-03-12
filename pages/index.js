@@ -85,8 +85,8 @@ export default function Home({a}) {
         <div>
           <p className="text-center my-5 font-bold">LATEST BLOGS</p>
           <div className="lg:grid lg:grid-cols-3 p-5 text-justify">
-            {data.blogs.data &&
-              data.blogs.data.map((item) => (
+            {a.blogs.data &&
+              a.blogs.data.map((item) => (
                 <Blogcard
                   key={item.id}
                   title={item.attributes.title.slice(0, 28)}
