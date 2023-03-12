@@ -52,7 +52,6 @@ export default function App({ Component, pageProps }) {
       setProgress(100);
     });
     setc(Math.random());
-    router.replace(router.asPath);
     if (jwt && !user.name) {
       setloading(true);
       resolveUser();
