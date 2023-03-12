@@ -5,7 +5,7 @@ import Typewriter from "typewriter-effect";
 import { gql } from "@apollo/client";
 import client from "middleware/apollo-client";
 import Bookcomponent from "@/components/bookcomponent";
-function Testseries({ data, user }) {
+function Testseries({ a, user }) {
   return (
     <div>
       <div className=" text-white text-lg md:text-2xl px-10 text-center py-10 md:py-20 bg-orange-400">
@@ -25,8 +25,8 @@ function Testseries({ data, user }) {
 
       <div className="m-5">
         <p className="text-center my-5 font-bold">RECENTS</p>
-        {data.books.data &&
-          data.books.data.map((item) => (
+        {a.books.data &&
+          a.books.data.map((item) => (
             <Bookcomponent
               key={item.id}
               id={item.id}
@@ -69,6 +69,6 @@ export async function getServerSideProps() {
       }
     `,
   });
-
-  return { props: { data } };
+  const a= data;
+  return { props: { a } };
 }
