@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { gql } from "@apollo/client";
 import client from "middleware/apollo-client";
-function Pdfbook({ data }) {
+function Pdfbook({ a }) {
   return (
     <div>
       <div className="m-5">
@@ -17,8 +17,8 @@ function Pdfbook({ data }) {
         </div>
         <div>
           <p className="text-center my-5 font-bold">RECENTS</p>
-          {data.pdfbooks.data &&
-            data.pdfbooks.data.map((item) => (
+          {a.pdfbooks.data &&
+            a.pdfbooks.data.map((item) => (
               <Pdfbookscomp
                 title={item.attributes.title}
                 key={item.id}
@@ -47,6 +47,6 @@ export async function getServerSideProps() {
       }
     `,
   });
-
-  return { props: { data } };
+const a = data;
+  return { props: { a } };
 }
