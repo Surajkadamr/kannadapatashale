@@ -24,7 +24,7 @@ export default function App({ Component, pageProps }) {
   useEffect(() => {
     const jwt = Cookies.get("jwt");
     const resolveUser = async () => {
-      const data1 = await fetch(`http://192.168.1.38:1337/api/users/me`, {
+      const data1 = await fetch(`https://kannadapatashale-backend.onrender.com/api/users/me`, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${jwt}`,
@@ -52,6 +52,7 @@ export default function App({ Component, pageProps }) {
       setProgress(100);
     });
     setc(Math.random());
+    router.replace(router.asPath);
     if (jwt && !user.name) {
       setloading(true);
       resolveUser();
