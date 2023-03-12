@@ -2,7 +2,7 @@ import React from "react";
 import Blogcard from "@/components/Blogcard";
 import { gql } from "@apollo/client";
 import client from "middleware/apollo-client";
-function Blogs({ data }) {
+function Blogs({ a }) {
   return (
     <div>
       <div className=" text-white text-lg md:text-2xl px-10 text-center py-16 md:py-20 bg-orange-400">
@@ -43,5 +43,6 @@ export async function getServerSideProps() {
     }
     `,
   });
-  return { props: { data } };
+  const a=data;
+  return { props: { a } };
 }
