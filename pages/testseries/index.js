@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Typewriter from "typewriter-effect";
 import { gql } from "@apollo/client";
 import client from "middleware/apollo-client";
-function Testseries({ data, user }) {
+function Testseries({ a, user }) {
   // const [c, setc] = useState();
   // useEffect(() => {
   //   setc(Math.random());
@@ -136,8 +136,8 @@ function Testseries({ data, user }) {
         <div>
           <p className="text-center my-5 font-bold">RECENTS</p>
           <div className="w-full md:grid-cols-3 md:grid">
-            {data.tests.data &&
-              data.tests.data.map((item) => (
+            {a.tests.data &&
+              a.tests.data.map((item) => (
                 <Testcard
                   title={item.attributes.title}
                   category={item.attributes.category}
@@ -178,6 +178,6 @@ export async function getServerSideProps() {
       }
     `,
   });
-
-  return { props: { data } };
+const a=data;
+  return { props: { a } };
 }
