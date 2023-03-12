@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaMinusCircle } from "react-icons/fa";
-import { IoMdAddCircle } from "react-icons/Io";
+import { IoMdAddCircle } from "react-icons/io";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import Script from "next/script";
