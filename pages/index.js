@@ -103,17 +103,17 @@ export default function Home({data}) {
 export async function getServerSideProps() {
   const { data } = await client.query({
     query: gql`
-      query {
-        blogs {
-          data {
-            id
-            attributes {
-              title
-              desc
-            }
+    query {
+      blogs(sort:"id:desc"){
+        data {
+          id
+          attributes {
+            title
+            desc
           }
         }
       }
+    }
     `,
   });
   return { props: { data } };
