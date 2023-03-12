@@ -6,7 +6,7 @@ import "@splidejs/react-splide/css";
 import Blogcard from "@/components/Blogcard";
 import { gql } from "@apollo/client";
 import client from "middleware/apollo-client";
-export default function Home({data}) {
+export default function Home({a}) {
   return (
     <>
       <Head>
@@ -116,5 +116,6 @@ export async function getServerSideProps() {
     }
     `,
   });
-  return { props: { data } };
+  const a =data;
+  return { props: { a } };
 }
